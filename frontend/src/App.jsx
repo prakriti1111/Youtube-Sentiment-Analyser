@@ -10,13 +10,13 @@ export default function App() {
   const [error,setError]=useState("");
 
   return (
-    <div className="bg-linear-to-br from-gray-900 to-blue-900 p-4 md:p-8 font-sans ">
+    <div className="bg-linear-to-br from-gray-900 to-blue-900 p-4 md:p-8 font-sans text-white">
         <div className="min-h-screen p-10">
         
         <h1 className="text-center text-5xl font-extrabold text-indigo-700 drop-shadow">
             EchoMind 💬
         </h1>
-        <p className="text-center mt-2 text-gray-600">
+        <p className="text-center mt-2 text-gray-400">
             Understand YouTube Audiences with AI-Powered Insights
         </p>
 
@@ -46,17 +46,18 @@ export default function App() {
 
             {/* CHARTS */}
             <div className="grid md:grid-cols-2 gap-6">
-                <SentimentChart data={insights.sentiment_breakdown}/>
+                <SentimentChart data={insights.sentiment_breakdown}/> 
                 <WordCloudImg words={insights.word_frequencies}/>
             </div>
 
             {/* OPINIONS */}
             <div className="grid md:grid-cols-2 gap-6">
-
+              <div className="bg-[radial-gradient(circle_at_top_left,#fff3c4,#d2b48c,#bfa079)] rounded-2xl">
                 <Opinion title="💚 Top Positive" list={insights.top_opinions.positive} color="green"/>
-
+              </div>
+              <div className="bg-[radial-gradient(circle_at_top_left,#fff3c4,#d2b48c,#bfa079)] rounded-2xl">
                 <Opinion title="❤️ Top Negative" list={insights.top_opinions.negative} color="red"/>
-            
+              </div>
             </div>
 
             </div>
