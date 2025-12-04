@@ -40,7 +40,7 @@ export default function SentimentChart({ data }) {
   };
 
   return (
-    <div className="bg-white p-6 shadow-xl rounded-xl flex flex-col items-center">
+    <div className="bg-[radial-gradient(circle_at_top_left,#fff3c4,#d2b48c,#bfa079)] p-6 shadow-xl rounded-xl flex flex-col items-center">
       <h3 className="font-bold mb-4">Sentiment Distribution</h3>
       <div className="w-72">
         <Doughnut data={chartData} options={options} />
