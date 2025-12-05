@@ -3,7 +3,7 @@ import time
 from googleapiclient.discovery import build
 
 def get_video_id(url):
-    """Extracts video ID from various YouTube URL formats."""
+    
     match_v = re.search(r"[?&]v=([^&]+)", url)
     if match_v:
         return match_v.group(1)
@@ -15,10 +15,7 @@ def get_video_id(url):
     return None
 
 def fetch_comments(api_key, video_url, max_comments=500):
-    """
-    Fetches comments for a given YouTube video URL using the API.
-    Returns a list of raw comment strings.
-    """
+   
     video_id = get_video_id(video_url)
     if not video_id:
         print("Error: Invalid YouTube URL or video ID not found.")
@@ -35,7 +32,7 @@ def fetch_comments(api_key, video_url, max_comments=500):
 
     while count < max_comments:
         try:
-            # Request comments batch
+            
             request = youtube.commentThreads().list(
                 part="snippet",
                 videoId=video_id,

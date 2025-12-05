@@ -10,7 +10,7 @@ export default function App() {
   const [error,setError]=useState("");
 
   return (
-    <div className="bg-linear-to-br from-gray-900 to-blue-900 p-4 md:p-8 font-sans text-white">
+    <div className="bg-linear-to-br from-gray-900 to-blue-900 p-4 md:p-8 font-sans ">
         <div className="min-h-screen p-10">
         
         <h1 className="text-center text-5xl font-extrabold text-indigo-700 drop-shadow">
