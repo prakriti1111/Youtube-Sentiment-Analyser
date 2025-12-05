@@ -10,7 +10,7 @@ STOP_WORDS = set(stopwords.words('english'))
 VADER = SentimentIntensityAnalyzer()
 
 def preprocess_text(text):
-    """Cleans text: case folding, removing links, punctuation, and stop words."""
+    
     text = text.lower()
     text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)
    
@@ -24,10 +24,7 @@ def preprocess_text(text):
     return " ".join(tokens)
 
 def analyze_sentiment(comments):
-    """
-    Applies VADER sentiment analysis to a list of comments.
-    Returns a DataFrame with comment text, compound score, and sentiment label.
-    """
+    
     data = []
     for comment in comments:
        
@@ -69,10 +66,7 @@ def get_word_frequencies(clean_text_list, top_n=50):
         return [] 
 
 def generate_insights(df, keyword=None):
-    """
-    Calculates all analysis metrics and prepares data for the frontend.
-    Returns a dictionary ready for JSON serialization.
-    """
+    
     insights = {}
     
     sentiment_counts = df['sentiment'].value_counts()
